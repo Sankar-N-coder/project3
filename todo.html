@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+</head>
+<body>
+    <div class=" bg-blue-500 h-screen w-screen">
+            <div class=" absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-screen shadow-lg rounded-lg bg-white  w-1/4">
+                    <div class=" ml-[45px] mt-[30px] flex ">
+                        <input type="text" class=" border-2 border-gray-400 w-2/3 h-[40px] placeholder:p-2" placeholder=" Add a new Task" id="input">
+                        <button class=" bg-green-600 text-white ml-1 p-2 font-bold" id="add">Add Task</button>
+                    </div>
+                    <div id="root" class=" ml-20 bg-white ">
+
+                    </div>
+            </div>
+    </div>
+    <script>
+        let add=document.getElementById("add");
+        add.addEventListener("click",addTask);
+        function addTask()
+        {
+            let input=document.getElementById("input").value;
+            let dd=document.getElementById("root");
+            dd.innerHTML+=`
+            <div class="flex gap-4 mt-10">
+                 <input type="checkbox" class="p"/> 
+                <p class="font-semi-bold text-xl y">${input}</p>
+             </div>`
+        }
+    </script>
+</body>
+</html>
